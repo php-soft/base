@@ -1,7 +1,7 @@
 {
     "name": "toancong/base",
     "description": "Base package",
-    "license": "APACHE",
+    "license": "MIT",
     "authors": [
         {
             "name": "Toan Cong",
