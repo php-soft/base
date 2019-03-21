@@ -1,0 +1,38 @@
+{
+    "name": "php-soft/base",
+    "description": "Base package",
+    "license": "APACHE",
+    "authors": [
+        {
+            "name": "Toan Cong",
+            "email": "toancong1920@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1"
+    },
+    "require-dev": {
+        "mockery/mockery": "~1.0",
+        "phpunit/phpunit": "~6.0"
+    },
+    "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
+        "psr-4": {
+            "PhpSoft\\Base\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "PhpSoft\\Base\\ServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
