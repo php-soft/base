@@ -36,6 +36,11 @@ abstract class BreadRepository implements BreadInterface
                 }
             });
         }
+
+        // add a custom builder
+        if (isset($options['builder']) && is_callable($options['builder'])) {
+            $options['builder']($query);
+        }
         // dump($query->toSql(), str_replace_array('?', $query->getBindings(), $query->toSql()));
         // dump($query->toSql());
         return $query->paginate($size, ['*'], 'page[number]', $number);
