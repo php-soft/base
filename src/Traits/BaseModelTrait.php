@@ -8,7 +8,6 @@ trait BaseModelTrait
     use ScopeFilterFieldsTrail;
     use ScopeFilterStatusTrail;
     use ScopeQueryOrdersTrail;
-    use \Bean\Activity\Traits\Activitiable;
 
     public function fireModelEvent($event, $halt = true)
     {
