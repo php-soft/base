@@ -47,7 +47,7 @@ trait ScopeQueryOrdersTrail
                     if ($options) {
                         $query->orderBy(\DB::raw("{$col}->'$.{$options['path']}'"), $dir);
                     } else {
-                        $query->orderBy(\DB::raw("ANY_VALUE($col)"), $dir);
+                        $query->orderBy(\DB::raw("MIN($col)"), $dir);
                     }
 
                     $ordered = true;

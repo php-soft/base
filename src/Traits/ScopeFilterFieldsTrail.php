@@ -225,12 +225,12 @@ trait ScopeFilterFieldsTrail
                 }
             } else {
                 foreach ($select as $column) {
-                    $query->addSelect(\DB::raw("ANY_VALUE($column) AS `$column`"));
+                    $query->addSelect(\DB::raw("MIN($column) AS `$column`"));
                 }
             }
         } else {
             foreach (\Schema::getColumnListing($relationTable) as $column) {
-                $query->addSelect(\DB::raw("ANY_VALUE(`$relation_name`.`$column`) AS `{$relation_name}.$column`"));
+                $query->addSelect(\DB::raw("MIN(`$relation_name`.`$column`) AS `{$relation_name}.$column`"));
             }
         }
 
